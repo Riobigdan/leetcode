@@ -1,5 +1,5 @@
 // 22. Generate Parentheses DFS 慢速 55, 61
-function generateParenthesis(n: number): string[] {
+export function generateParenthesis(n: number): string[] {
   const result: string[] = [];
   function dfs(left: number, right: number, str: string, sum: number) {
     if (left === 0 && right === 0) {
@@ -20,7 +20,7 @@ function generateParenthesis(n: number): string[] {
 console.log(generateParenthesis(4));
 // 22. Generate Parentheses DFS 去掉sum
 //快速 99.15  61.45
-function generateParenthesis2(n: number): string[] {
+export function generateParenthesis2(n: number): string[] {
   const result: string[] = [];
   function dfs(left: number, right: number, str: string) {
     if (left === 0 && right === 0) {
