@@ -18,3 +18,23 @@ function generateParenthesis(n: number): string[] {
 }
 
 console.log(generateParenthesis(4));
+// 22. Generate Parentheses DFS 去掉sum
+//快速 99.15  61.45
+function generateParenthesis2(n: number): string[] {
+  const result: string[] = [];
+  function dfs(left: number, right: number, str: string) {
+    if (left === 0 && right === 0) {
+      result.push(str);
+      return;
+    }
+    if (left > 0) {
+      dfs(left - 1, right, str + "(");
+    }
+    if (right > left) {
+      dfs(left, right - 1, str + ")");
+    }
+  }
+  dfs(n, n, "");
+  return result;
+}
+console.log(generateParenthesis(4));
